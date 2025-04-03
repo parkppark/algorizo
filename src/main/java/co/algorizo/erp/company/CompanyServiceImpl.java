@@ -37,6 +37,11 @@ public class CompanyServiceImpl implements CompanyService {
 		companyDAO.companydelete(cp_id);
 	}
 
+	@Override
+	public CompanyDTO selectCompany(int cp_id) {
+		return companyDAO.selectCompany(cp_id);
+	}
+
 	
 
 }

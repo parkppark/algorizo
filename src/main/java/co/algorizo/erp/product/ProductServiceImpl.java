@@ -7,13 +7,21 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import co.algorizo.erp.stock.stockService;
+
 @Service
 public class ProductServiceImpl implements ProductService{
 
 	@Autowired
 	private ProductDAO productDAO;
+	
+	@Autowired
+	private stockService stockservice;
+	
 	@Override
 	public void productinsert(ProductDTO productDTO) {
+		//int s_quantity = stockservice.getStockQuantity(productDTO.getStock_s_id());
+		
 		productDAO.productinsert(productDTO);
 	}
 	@Override

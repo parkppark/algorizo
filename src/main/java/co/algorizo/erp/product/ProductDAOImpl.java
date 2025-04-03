@@ -43,4 +43,9 @@ public class ProductDAOImpl implements ProductDAO{
 		return sqlsession.selectOne(NAMESPACE + ".getLastOrderCode");
 	}
 
+//	@Override
+//	public int getStockQuantity(int stock_s_id) {
+//		return sqlsession.selectOne(NAMESPACE + ".getStockQuantity", stock_s_id);
+//	}
+
 }

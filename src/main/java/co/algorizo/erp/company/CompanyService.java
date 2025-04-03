@@ -9,4 +9,5 @@ public interface CompanyService {
 	public void companyupdate(CompanyDTO companyDTO);
 	public void companyinsert(CompanyDTO companyDTO);
 	public void companydelete(int cp_id);
+	public CompanyDTO selectCompany(int cp_id);
 }

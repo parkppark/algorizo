@@ -12,12 +12,15 @@ public class CompanyDTO {
 	private String cp_addr;
 	private String cp_regdate;
 	private String cp_moddate;
+	private String m_name;
 	private int del;
+	private String member_m_id;
 	
 	public CompanyDTO() {}
 
 	public CompanyDTO(int cp_id, String cp_name, String cp_ctg, String cp_manager, String cp_pno, String cp_mail,
-			String cp_fax, String cp_addr, String cp_regdate, String cp_moddate, int del) {
+			String cp_fax, String cp_addr, String cp_regdate, String cp_moddate, String m_name, int del,
+			String member_m_id) {
 		super();
 		this.cp_id = cp_id;
 		this.cp_name = cp_name;
@@ -29,7 +32,9 @@ public class CompanyDTO {
 		this.cp_addr = cp_addr;
 		this.cp_regdate = cp_regdate;
 		this.cp_moddate = cp_moddate;
+		this.m_name = m_name;
 		this.del = del;
+		this.member_m_id = member_m_id;
 	}
 
 	public int getCp_id() {
@@ -112,6 +117,14 @@ public class CompanyDTO {
 		this.cp_moddate = cp_moddate;
 	}
 
+	public String getM_name() {
+		return m_name;
+	}
+
+	public void setM_name(String m_name) {
+		this.m_name = m_name;
+	}
+
 	public int getDel() {
 		return del;
 	}
@@ -120,11 +133,20 @@ public class CompanyDTO {
 		this.del = del;
 	}
 
+	public String getMember_m_id() {
+		return member_m_id;
+	}
+
+	public void setMember_m_id(String member_m_id) {
+		this.member_m_id = member_m_id;
+	}
+
 	@Override
 	public String toString() {
 		return "CompanyDTO [cp_id=" + cp_id + ", cp_name=" + cp_name + ", cp_ctg=" + cp_ctg + ", cp_manager="
 				+ cp_manager + ", cp_pno=" + cp_pno + ", cp_mail=" + cp_mail + ", cp_fax=" + cp_fax + ", cp_addr="
-				+ cp_addr + ", cp_regdate=" + cp_regdate + ", cp_moddate=" + cp_moddate + ", del=" + del + "]";
+				+ cp_addr + ", cp_regdate=" + cp_regdate + ", cp_moddate=" + cp_moddate + ", m_name=" + m_name
+				+ ", del=" + del + ", member_m_id=" + member_m_id + "]";
 	}
 
 	

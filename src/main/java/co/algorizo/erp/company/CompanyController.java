@@ -2,6 +2,7 @@ package co.algorizo.erp.company;
 
 import java.util.List;
 
+import javax.inject.Inject;
 import javax.servlet.http.HttpSession;
 
 import org.apache.ibatis.session.SqlSession;
@@ -13,13 +14,18 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import co.algorizo.erp.product.ProductDTO;
+import co.algorizo.erp.register.dto.MemberDTO;
+import co.algorizo.erp.register.service.MemberService;
+
 
 @Controller
 public class CompanyController {
 	
 	@Autowired
 	private SqlSession sqlsession;
+	
+	@Inject
+	MemberService memberservice;
 	
 	@Autowired
 	private CompanyService companyservice;
@@ -64,7 +70,7 @@ public class CompanyController {
 	        return "redirect:/";  // ✅ 세션 없으면 로그인 페이지로 리다이렉트
 	    }
 		
-		return "company/companyinsert";
+		return "company/companylist";
 	}
 	
 	@RequestMapping(value="/company/companyinsert", method = RequestMethod.POST)
@@ -72,6 +78,11 @@ public class CompanyController {
 		if (session.getAttribute("m_id") == null) { 
 	        return "redirect:/";  // ✅ 세션 없으면 로그인 페이지로 리다이렉트
 	    }
+		
+		String member_m_id = (String) session.getAttribute("m_id");
+		MemberDTO member = memberservice.selectMember(member_m_id);
+		companyDTO.setMember_m_id(member_m_id);
+		companyDTO.setM_name(member.getM_name());
 		
 		companyservice.companyinsert(companyDTO);
 		return "redirect:/company/companylist";

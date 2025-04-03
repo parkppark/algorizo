@@ -6,7 +6,6 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import co.algorizo.erp.product.ProductDTO;
 
 @Repository
 public class CompanyDAOImpl implements CompanyDAO{
@@ -41,6 +40,12 @@ public class CompanyDAOImpl implements CompanyDAO{
 		sqlSession.delete(NAMESPACE + ".companydelete", cp_id);
 	}
 
+	@Override
+	public CompanyDTO selectCompany(int cp_id) {
+		return sqlSession.selectOne(NAMESPACE + ".selectCompany", cp_id);
+	}
+
+	
 	
 
 	
