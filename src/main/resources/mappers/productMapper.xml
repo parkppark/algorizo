@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="co.algorizo.erp.productMapper">
+
+	<insert id="productinsert" parameterType="co.algorizo.erp.product.ProductDTO">
+     INSERT INTO product (p_id, p_lctg, p_mctg, p_sctg, p_code, p_name, p_price, p_content, p_regdate)
+    VALUES (#{p_id}, #{p_lctg}, #{p_mctg}, #{p_sctg}, #{p_code}, #{p_name}, #{p_price}, #{p_content}, now());
+	</insert>
+	
+	<select id="productlist" resultType="co.algorizo.erp.product.ProductDTO">
+		select * from product where del = 0
+	</select>
+	
+	<select id="getProductCode" parameterType="String" resultType="co.algorizo.erp.product.ProductDTO">
+		select * from product where p_code = #{p_code}
+	</select>
+	
+	<update id="productupdate" parameterType="co.algorizo.erp.product.ProductDTO">
+		update product set p_name=#{p_name}, p_content=#{p_content}, p_price=#{p_price}, p_moddate= Now() where p_id=#{p_id}
+	</update>
+	
+	<update id="productdelete" parameterType="co.algorizo.erp.product.ProductDTO">
+		update product set del = 1 where p_id = #{p_id}
+	</update>
+	
+	<select id="getLastOrderCode" resultType="String">
+        SELECT p_code FROM product ORDER BY p_id DESC LIMIT 1;
+    </select>
+
+</mapper>

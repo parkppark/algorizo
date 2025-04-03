@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="co.algorizo.erp.inboundmapper">
+ 
+<!--전체 입고 조회  -->
+<select id="list" resultType="co.algorizo.erp.inbound.inboundDTO">
+	select * from inbound where del = 0;
+</select>
+
+<!--입고 상세 조회  -->
+<select id="detail" parameterType="Integer" resultType="co.algorizo.erp.inbound.inboundDTO">
+	select * from inbound where in_id = #{in_id};
+</select>
+
+<!--입고 등록  -->
+<insert id="register" parameterType="co.algorizo.erp.inbound.inboundDTO">
+	insert into inbound(in_status,del) 
+	values(#{in_status},0);
+</insert>
+
+
+<!--입고 수정  -->
+<update id="update" parameterType="co.algorizo.erp.inbound.inboundDTO">
+	update inbound set 
+		in_status=#{in_status},
+		in_date = #{update_date}s
+		where in_id=#{in_id};
+</update>
+
+<!--입고 삭제  -->
+<update id="delete" parameterType="Integer">
+	update inbound set del = 1 where in_id=#{in_id};
+</update>
+</mapper>

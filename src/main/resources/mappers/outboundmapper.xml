@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="co.algorizo.erp.outboundmapper">
+<!-- 출고 전체 조회  -->
+<select id="list" resultType="co.algorizo.erp.outbound.outboundDTO">
+	select * from outbound where del = 0;
+</select>
+<!--출고 상세 정보  -->
+<select id="detail" resultType="co.algorizo.erp.outbound.outboundDTO" parameterType="Integer">
+	select * from outbound where out_id = #{out_id}; 
+</select>
+<!--출고 등록  -->
+<insert id="register" parameterType="co.algorizo.erp.outbound.outboundDTO">
+	insert into outbound(out_status,del)
+	 values(#{out_status},0);
+</insert>
+
+
+<!--출고 수정  -->
+<update id="update" parameterType="co.algorizo.erp.outbound.outboundDTO">
+ 	update outbound set 
+		out_date=#{update_date},
+		out_status=#{out_status} 
+		where out_id=#{out_id};
+</update>
+<!--출고 삭제  -->
+<update id="delete" parameterType="Integer">
+	update outbound set del = 1 where out_id = #{out_id};
+</update>
+
+
+
+
+<!--입고 처리  -->
+<!-- <insert id="insertoutstock" parameterType="co.algorizo.erp.stock.stockDTO">
+	insert into outbound(p_id,p_name,p_code,p_quantity,p_price,out_date,out_status) 
+	values(#{p_id},#{p_name},#{p_code},#{p_quantity},#{p_price},#{out_date},#{out_status});
+</insert> -->
+
+<!-- 출고 처리후 총합 구하기 -->
+<!-- <update id="updateouttotal" parameterType="map">
+	update stock set totalprice = totalprice - (#{p_price} * #{p_quantity}),
+	s_quantity = s_quantity - #{p_quantity}
+	where p_id = #{p_id};
+</update> -->
+</mapper>
