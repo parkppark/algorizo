@@ -7,4 +7,5 @@ import co.algorizo.erp.dept.dto.DeptDTO;
 
 public interface DeptService {
 	public List<DeptDTO> getDeptList();
+	public DeptDTO selectDept(int d_id);
 }

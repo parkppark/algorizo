@@ -9,10 +9,6 @@
 <%@include file="../include/head.jsp"%>
 </head>
 
-<%-- <%
-String p_name = request.getParameter("p_name");
-String p_code = request.getParameter("p_code");
-%> --%>
 <body>
 	<div id="app">
 		<div id="sidebar" class="active">
@@ -162,9 +158,29 @@ String p_code = request.getParameter("p_code");
 														</div>
 
 
+															<div class="form-group">
+															<label for="email-id-vertical">담당자</label>
+															<p class="form-control">${product.member_m_name} (${product.dept_team})</p>
+														</div>
+														
+			<div class="col-md-4">
+			    <label>공급업체</label>
+			    <p class="form-control">
+			        ${company.cp_name} (${company.cp_ctg})  <!-- 개별 회사 정보 -->
+			    </p>
+			</div>
+
+
+
+
+
 														<div class="col-12 d-flex justify-content-end">
-															<button type="button" onclick="location.href='productupdate?p_code=${product.p_code}'" class="btn btn-primary me-1 mb-1">수정</button>
-															<button type="button" onclick="location.href='productlist'" class="btn btn-danger me-1 mb-1">목록</button>
+															<button type="button"
+																onclick="location.href='productupdate?p_code=${product.p_code}'"
+																class="btn btn-primary me-1 mb-1">수정</button>
+															<button type="button"
+																onclick="location.href='productlist'"
+																class="btn btn-danger me-1 mb-1">목록</button>
 														</div>
 													</div>
 												</div>

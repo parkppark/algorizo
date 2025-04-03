@@ -10,5 +10,6 @@ public interface ProductDAO {
 	public void productupdate(ProductDTO productDTO);
 	public void productdelete(int p_id);
 	public String getLastProductCode();
+	//public int getStockQuantity(int stock_s_id);
 
 }

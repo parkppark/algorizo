@@ -1,22 +1,38 @@
 package co.algorizo.erp.product;
 
+import co.algorizo.erp.company.CompanyDTO;
+import co.algorizo.erp.dept.dto.DeptDTO;
+
 public class ProductDTO {
-	private int p_id;
-	private String p_lctg;
-	private String p_mctg;
-	private String p_sctg;
-	private String p_code;
-	private String p_name;
-	private int p_price;
-	private String p_content;
-	private String p_regdate;
-	private String p_moddate;
-	private String p_img;
-	
+    private int p_id;
+    private String p_lctg;
+    private String p_mctg;
+    private String p_sctg;
+    private String p_code;
+    private String p_name;
+    private int p_price;
+    private String p_content;
+    private String p_regdate;
+    private String p_moddate;
+    private int del;
+    private String member_m_id;
+    private String member_m_name; // 로그인된 사용자 이름
+    private DeptDTO dept; // 부서 정보 (DeptDTO 객체)
+    private int dept_d_id;
+    private String dept_team; // 부서 이름 (팀명)
+    private int stock_s_id;
+    
+    
+    private int company_cp_id;
+    private String cp_name;
+    private String cp_ctg;
+    
 	public ProductDTO() {}
 
 	public ProductDTO(int p_id, String p_lctg, String p_mctg, String p_sctg, String p_code, String p_name, int p_price,
-			String p_content, String p_regdate, String p_moddate, String p_img) {
+			String p_content, String p_regdate, String p_moddate, int del, String member_m_id, String member_m_name,
+			DeptDTO dept, int dept_d_id, String dept_team, int stock_s_id, int company_cp_id, String cp_name,
+			String cp_ctg) {
 		super();
 		this.p_id = p_id;
 		this.p_lctg = p_lctg;
@@ -28,7 +44,16 @@ public class ProductDTO {
 		this.p_content = p_content;
 		this.p_regdate = p_regdate;
 		this.p_moddate = p_moddate;
-		this.p_img = p_img;
+		this.del = del;
+		this.member_m_id = member_m_id;
+		this.member_m_name = member_m_name;
+		this.dept = dept;
+		this.dept_d_id = dept_d_id;
+		this.dept_team = dept_team;
+		this.stock_s_id = stock_s_id;
+		this.company_cp_id = company_cp_id;
+		this.cp_name = cp_name;
+		this.cp_ctg = cp_ctg;
 	}
 
 	public int getP_id() {
@@ -111,20 +136,88 @@ public class ProductDTO {
 		this.p_moddate = p_moddate;
 	}
 
-	public String getP_img() {
-		return p_img;
+	public int getDel() {
+		return del;
 	}
 
-	public void setP_img(String p_img) {
-		this.p_img = p_img;
+	public void setDel(int del) {
+		this.del = del;
 	}
 
-	@Override
-	public String toString() {
-		return "ProductDTO [p_id=" + p_id + ", p_lctg=" + p_lctg + ", p_mctg=" + p_mctg + ", p_sctg=" + p_sctg
-				+ ", p_code=" + p_code + ", p_name=" + p_name + ", p_price=" + p_price + ", p_content=" + p_content
-				+ ", p_regdate=" + p_regdate + ", p_moddate=" + p_moddate + ", p_img=" + p_img + "]";
+	public String getMember_m_id() {
+		return member_m_id;
 	}
+
+	public void setMember_m_id(String member_m_id) {
+		this.member_m_id = member_m_id;
+	}
+
+	public String getMember_m_name() {
+		return member_m_name;
+	}
+
+	public void setMember_m_name(String member_m_name) {
+		this.member_m_name = member_m_name;
+	}
+
+	public DeptDTO getDept() {
+		return dept;
+	}
+
+	public void setDept(DeptDTO dept) {
+		this.dept = dept;
+	}
+
+	public int getDept_d_id() {
+		return dept_d_id;
+	}
+
+	public void setDept_d_id(int dept_d_id) {
+		this.dept_d_id = dept_d_id;
+	}
+
+	public String getDept_team() {
+		return dept_team;
+	}
+
+	public void setDept_team(String dept_team) {
+		this.dept_team = dept_team;
+	}
+
+	public int getStock_s_id() {
+		return stock_s_id;
+	}
+
+	public void setStock_s_id(int stock_s_id) {
+		this.stock_s_id = stock_s_id;
+	}
+
+	public int getCompany_cp_id() {
+		return company_cp_id;
+	}
+
+	public void setCompany_cp_id(int company_cp_id) {
+		this.company_cp_id = company_cp_id;
+	}
+
+	public String getCp_name() {
+		return cp_name;
+	}
+
+	public void setCp_name(String cp_name) {
+		this.cp_name = cp_name;
+	}
+
+	public String getCp_ctg() {
+		return cp_ctg;
+	}
+
+	public void setCp_ctg(String cp_ctg) {
+		this.cp_ctg = cp_ctg;
+	}
+
+	
+
 	
 	
 	

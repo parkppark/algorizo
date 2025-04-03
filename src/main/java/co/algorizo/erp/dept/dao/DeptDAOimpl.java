@@ -21,4 +21,10 @@ public class DeptDAOimpl implements DeptDAO{
 		return sqlSession.selectList("co.algorizo.erp.deptMapper.getDeptList");
 	}
 
+	@Override
+	public DeptDTO selectDept(int d_id) {
+		// TODO Auto-generated method stub
+		return sqlSession.selectOne("co.algorizo.erp.deptMapper.getDeptById", d_id);
+	}
+
 }

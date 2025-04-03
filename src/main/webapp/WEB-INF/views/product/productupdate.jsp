@@ -168,7 +168,11 @@ String p_code = request.getParameter("p_code");
 															<label for="email-id-vertical">수정일</label>
 															<input type="text" class="form-control" name="p_moddate" value="${product.p_moddate }"readonly>
 														</div>
-
+														
+														<div class="form-group">
+															<label for="email-id-vertical">수정자</label> 
+															<input type="text" value="${member.m_name} (${dept.team})" class="form-control" readonly>
+														</div>
 
 														<div class="col-12 d-flex justify-content-end">
 															<button type="submit"

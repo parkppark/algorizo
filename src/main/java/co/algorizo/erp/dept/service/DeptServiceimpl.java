@@ -21,4 +21,10 @@ public class DeptServiceimpl implements DeptService{
 		return dao.getDeptList();
 	}
 
+	@Override
+	public DeptDTO selectDept(int d_id) {
+		// TODO Auto-generated method stub
+		return dao.selectDept(d_id);
+	}
+
 }

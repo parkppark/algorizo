@@ -18,8 +18,8 @@
 	</update>
 	
 	<insert id="companyinsert" parameterType="co.algorizo.erp.company.CompanyDTO">
-		insert into company(cp_name, cp_ctg, cp_manager, cp_pno, cp_mail, cp_fax, cp_addr, cp_regdate)
-		values (#{cp_name}, #{cp_ctg}, #{cp_manager}, #{cp_pno}, #{cp_mail}, #{cp_fax}, #{cp_addr}, NOW())
+		insert into company(cp_name, cp_ctg, cp_manager, cp_pno, cp_mail, cp_fax, cp_addr, cp_regdate, member_m_id)
+		values (#{cp_name}, #{cp_ctg}, #{cp_manager}, #{cp_pno}, #{cp_mail}, #{cp_fax}, #{cp_addr}, NOW(), #{member_m_id})
 	</insert>
 	
 	<update id="companydelete" parameterType="co.algorizo.erp.company.CompanyDTO" >
