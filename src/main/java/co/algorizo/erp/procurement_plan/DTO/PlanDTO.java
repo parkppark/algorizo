@@ -4,6 +4,7 @@ import java.util.List;
 
 public class PlanDTO {
 	private int plan_id;
+	private String plan_code;
 	private String plan_title;
 	private String plan_writer;
 	private String plan_regdate;
@@ -15,10 +16,11 @@ public class PlanDTO {
 		
 	}
 
-	public PlanDTO(int plan_id, String plan_title, String plan_writer, String plan_regdate, String plan_moddate,
-			List<PlanProductDTO> products) {
+	public PlanDTO(int plan_id, String plan_code, String plan_title, String plan_writer, String plan_regdate,
+			String plan_moddate, List<PlanProductDTO> products) {
 		super();
 		this.plan_id = plan_id;
+		this.plan_code = plan_code;
 		this.plan_title = plan_title;
 		this.plan_writer = plan_writer;
 		this.plan_regdate = plan_regdate;
@@ -34,6 +36,14 @@ public class PlanDTO {
 		this.plan_id = plan_id;
 	}
 
+	public String getPlan_code() {
+		return plan_code;
+	}
+
+	public void setPlan_code(String plan_code) {
+		this.plan_code = plan_code;
+	}
+
 	public String getPlan_title() {
 		return plan_title;
 	}
@@ -42,11 +52,11 @@ public class PlanDTO {
 		this.plan_title = plan_title;
 	}
 
-	public String getplan_writer() {
+	public String getPlan_writer() {
 		return plan_writer;
 	}
 
-	public void setplan_writer(String plan_writer) {
+	public void setPlan_writer(String plan_writer) {
 		this.plan_writer = plan_writer;
 	}
 
@@ -58,11 +68,11 @@ public class PlanDTO {
 		this.plan_regdate = plan_regdate;
 	}
 
-	public String getplan_moddate() {
+	public String getPlan_moddate() {
 		return plan_moddate;
 	}
 
-	public void setplan_moddate(String plan_moddate) {
+	public void setPlan_moddate(String plan_moddate) {
 		this.plan_moddate = plan_moddate;
 	}
 
@@ -76,8 +86,9 @@ public class PlanDTO {
 
 	@Override
 	public String toString() {
-		return "PlanDTO [plan_id=" + plan_id + ", plan_title=" + plan_title + ", plan_writer=" + plan_writer + ", plan_regdate="
-				+ plan_regdate + ", plan_moddate=" + plan_moddate + ", products=" + products + "]";
+		return "PlanDTO [plan_id=" + plan_id + ", plan_code=" + plan_code + ", plan_title=" + plan_title
+				+ ", plan_writer=" + plan_writer + ", plan_regdate=" + plan_regdate + ", plan_moddate=" + plan_moddate
+				+ ", products=" + products + "]";
 	}
 	
 }

@@ -4,14 +4,38 @@
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="co.algorizo.erp.inboundmapper">
  
+	<resultMap id="inboundMap" type="co.algorizo.erp.inbound.inboundDTO">
+		<id property="in_id" column="in_id"/>
+	    <result property="in_date" column="in_date"/>
+	    <result property="in_quantity" column="in_quantity"/>
+	
+	    <association property="productDTO" javaType="co.algorizo.erp.product.ProductDTO">
+	        <id property="p_id" column="p_id"/>
+	        <result property="p_lctg" column="p_lctg"/>
+	        <result property="p_mctg" column="p_mctg"/>
+	        <result property="p_sctg" column="p_sctg"/>
+	        <result property="p_code" column="p_code"/>
+	        <result property="p_name" column="p_name"/>
+	    </association>
+	</resultMap>
 <!--전체 입고 조회  -->
 <select id="list" resultType="co.algorizo.erp.inbound.inboundDTO">
 	select * from inbound where del = 0;
 </select>
-
 <!--입고 상세 조회  -->
-<select id="detail" parameterType="Integer" resultType="co.algorizo.erp.inbound.inboundDTO">
-	select * from inbound where in_id = #{in_id};
+<select id="detail" parameterType="int" resultMap="inboundMap">
+	select ib.in_id AS in_id
+	, ib.in_date AS in_date
+	, ib.in_quantity AS in_quantity
+	, p.p_id AS p_id
+	, p.p_lctg AS p_lctg
+	, p.p_mctg AS p_mctg
+	, p.p_sctg AS p_sctg
+	, p.p_code AS p_code
+	, p.p_name AS p_name
+	from inbound ib
+	join product p on ib.product_p_id = p.p_id 
+	where ib.in_id = #{in_id};
 </select>
 
 <!--입고 등록  -->

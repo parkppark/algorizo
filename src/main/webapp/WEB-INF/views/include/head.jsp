@@ -38,6 +38,7 @@
     
     <!-- 조달계획 -->
     <link rel="stylesheet" href="${contextPath }/resources/static/css/list.css">
+    <link rel="stylesheet" href="${contextPath }/resources/static/css/in_register.css">
     
     <!-- order register choice -->
     <link rel="stylesheet" href="${contextPath }/resources/static/dist/assets/vendors/choices.js/choices.min.css" />

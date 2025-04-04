@@ -3,6 +3,8 @@ package co.algorizo.erp.inbound;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
+import co.algorizo.erp.product.ProductDTO;
+
 public class inboundDTO {
 	
 		private int in_id;            // 입고 기록 고유 ID
@@ -10,23 +12,28 @@ public class inboundDTO {
 	    private String in_date; // 생성 날짜 (날짜와 시간 필요)
 	    private String update_date; // 수정 날짜 (날짜와 시간 필요)
 	    private String in_status;     // 입고 상태
+	    private int in_quantity;     // 입고 상태
 	    private String etc;           // 비고
 	    private int del;      		//삭제
+	    
+	    private ProductDTO productDTO;
 	
 	public inboundDTO() {
 		
 	}
 
-	public inboundDTO(int in_id, int p_id, String in_date, String update_date, String in_status, String etc,
-			int del) {
+	public inboundDTO(int in_id, int p_id, String in_date, String update_date, String in_status, int in_quantity,
+			String etc, int del, ProductDTO productDTO) {
 		super();
 		this.in_id = in_id;
 		this.p_id = p_id;
 		this.in_date = in_date;
 		this.update_date = update_date;
 		this.in_status = in_status;
+		this.in_quantity = in_quantity;
 		this.etc = etc;
 		this.del = del;
+		this.productDTO = productDTO;
 	}
 
 	public int getIn_id() {
@@ -69,6 +76,14 @@ public class inboundDTO {
 		this.in_status = in_status;
 	}
 
+	public int getIn_quantity() {
+		return in_quantity;
+	}
+
+	public void setIn_quantity(int in_quantity) {
+		this.in_quantity = in_quantity;
+	}
+
 	public String getEtc() {
 		return etc;
 	}
@@ -85,14 +100,19 @@ public class inboundDTO {
 		this.del = del;
 	}
 
+	public ProductDTO getProductDTO() {
+		return productDTO;
+	}
+
+	public void setProductDTO(ProductDTO productDTO) {
+		this.productDTO = productDTO;
+	}
+
 	@Override
 	public String toString() {
-		return "inboundDTO [in_id=" + in_id + ", p_id=" + p_id + ", in_date=" + in_date + ", update_date="
-				+ update_date + ", in_status=" + in_status + ", etc=" + etc + ", del=" + del + "]";
+		return "inboundDTO [in_id=" + in_id + ", p_id=" + p_id + ", in_date=" + in_date + ", update_date=" + update_date
+				+ ", in_status=" + in_status + ", in_quantity=" + in_quantity + ", etc=" + etc + ", del=" + del
+				+ ", productDTO=" + productDTO + "]";
 	}
-	
 
-	
-	
-	
 }

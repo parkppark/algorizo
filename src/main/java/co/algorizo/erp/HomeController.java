@@ -74,6 +74,7 @@ public class HomeController {
 	    }
 
 	    session.setAttribute("m_id", memberFromDb.getM_id());
+	    session.setAttribute("m_name", memberFromDb.getM_name());
 	    session.setAttribute("d_id", memberFromDb.getDept_d_id());
 	    logger.info("m_id : " + session.getAttribute("m_id"));
 	    logger.info("d_id : " + session.getAttribute("d_id"));
