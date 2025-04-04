@@ -143,54 +143,63 @@
                         </li>
                         
                         <li class="sidebar-item  has-sub">
-	                    <a href="#" class='sidebar-link'>
-	                        <i class="bi bi-stack"></i>
-	                        <span>입고</span>
-	                    </a>
-	                    <ul class="submenu ">
-	                        <li class="submenu-item ">
-	                            <a href="${contextPath }/inbound/i_list">입고 목록</a>
-	                        </li>
-	                        <li class="submenu-item ">
-	                            <a href="${contextPath }/inbound/i_register">입고 등록</a>
-	                        </li>
-	                    </ul>
-	                </li>
+		                    <a href="#" class='sidebar-link'>
+		                        <i class="bi bi-stack"></i>
+		                        <span>입고</span>
+		                    </a>
+		                    <ul class="submenu ">
+		                        <li class="submenu-item ">
+		                            <a href="${contextPath }/inbound/i_list">입고 목록</a>
+		                        </li>
+		                        <li class="submenu-item ">
+		                            <a href="${contextPath }/inbound/i_register">입고 등록</a>
+		                        </li>
+		                    </ul>
+		                </li>
+	                
+	                    <li class="sidebar-item  has-sub">
+	                        <a href="#" class='sidebar-link'>
+	                            <i class="bi bi-collection-fill"></i>
+	                            <span>검수</span>
+	                        </a>
+	                        <ul class="submenu ">
+	                            <li class="submenu-item ">
+	                                <a href="${contextPath }/inspection/list">검수</a>
+	                            </li>
+	                            <li class="submenu-item ">
+	                                <a href="${contextPath }/inspection/register">검수 등록</a>
+	                            </li>
+	                        </ul>
+	                    </li>
 	
-	                <li class="sidebar-item  has-sub">
-	                    <a href="#" class='sidebar-link'>
-	                        <i class="bi bi-collection-fill"></i>
-	                        <span>출고</span>
-	                    </a>
-	                    <ul class="submenu ">
-	                        <li class="submenu-item ">
-	                            <a href="${contextPath }/outbound/o_list">출고 목록</a>
-	                        </li>
-	                        <li class="submenu-item ">
-	                            <a href="${contextPath }/outbound/o_register">출고 등록</a>
-	                        </li>
-	                    </ul>
-	                </li>
-	                <li class="sidebar-item  has-sub">
-	                    <a href="#" class='sidebar-link'>
-	                        <i class="bi bi-stack"></i>
-	                        <span>재고</span>
-	                    </a>
-	                    <ul class="submenu ">
-	                        <li class="submenu-item ">
-	                            <a href="${contextPath }/stock/s_list">재고 목록</a>
-	                        </li>
-	                        <li class="submenu-item ">
-	                            <a href="${contextPath }/stock/s_register">재고 등록</a>
-	                        </li>
-	                    </ul>
-	                </li>
-                        
-                        
-
-                       
-
-
+		                <li class="sidebar-item  has-sub">
+		                    <a href="#" class='sidebar-link'>
+		                        <i class="bi bi-collection-fill"></i>
+		                        <span>출고</span>
+		                    </a>
+		                    <ul class="submenu ">
+		                        <li class="submenu-item ">
+		                            <a href="${contextPath }/outbound/o_list">출고 목록</a>
+		                        </li>
+		                        <li class="submenu-item ">
+		                            <a href="${contextPath }/outbound/o_register">출고 등록</a>
+		                        </li>
+		                    </ul>
+		                </li>
+		                <li class="sidebar-item  has-sub">
+		                    <a href="#" class='sidebar-link'>
+		                        <i class="bi bi-stack"></i>
+		                        <span>재고</span>
+		                    </a>
+		                    <ul class="submenu ">
+		                        <li class="submenu-item ">
+		                            <a href="${contextPath }/stock/s_list">재고 목록</a>
+		                        </li>
+		                        <li class="submenu-item ">
+		                            <a href="${contextPath }/stock/s_register">재고 등록</a>
+		                        </li>
+		                    </ul>
+		                </li>
                     </ul>
                 </div>
                 <button class="sidebar-toggler btn x"><i data-feather="x"></i></button>

@@ -8,19 +8,21 @@ import co.algorizo.erp.procurement_plan.DTO.PlanProductDTO;
 
 public interface PlanService {
 //	조달 계획 조회
-	List<PlanDTO> list(int limit , int pageNum);
+	List<PlanDTO> list();
 //	조달 계획 상세보기
 	List<PlanDetailDTO> detail(int plan_id);
 //	조달 계획 등록
-	boolean plan_Register(PlanDTO planDTO);
+	void plan_Register(PlanDTO planDTO);
 //	조달 계획 품목 등록
-	boolean product_Register(PlanProductDTO planProductDTO);
+	void product_Register(PlanProductDTO planProductDTO);
 //	조달 계획 수정
-	boolean update(PlanDetailDTO planDetailDTO);
+	void update(PlanDTO planDTO);
 //	조달 계획 삭제
-	boolean plan_Delete(int plan_id);
-//	계획 갯수
-	int count();
+	void plan_Delete(int plan_id);
+//	조달 계획 품목 삭제
+	void product_Delete(int plan_id);
+//	코드 가져오기
+	String registerCode(String prefix);
 //	품목 리스트 (나중에 다시 연동)
 	List<PlanDetailDTO> product_list();
 }
