@@ -12,7 +12,11 @@ public class InspectionDAOImpl implements InspectionDAO{
 	@Autowired
 	private SqlSession sqlSession;
 <<<<<<< HEAD
+<<<<<<< HEAD
 //	검수 목록 조회 아아아아
+=======
+
+>>>>>>> parent of 403c62a (inspectionDAOImpl 주석 추가)
 =======
 
 >>>>>>> parent of 403c62a (inspectionDAOImpl 주석 추가)
