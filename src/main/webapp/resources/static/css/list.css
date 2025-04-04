@@ -46,9 +46,7 @@
 	display: flex;
 	justify-content: flex-end;
     margin-right: 30px;
-}
-.plan_title{
-	color: #607080;
+    margin-bottom: 30px;
 }
 .modal-dialog-scrollable{
 	min-width: 800px;
@@ -110,4 +108,10 @@
 }
 .btn-secondary.custom{
 	width: 125px;
+}
+.result_buttons{
+	margin-top: 35px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 14px;
 }
