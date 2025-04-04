@@ -1,9 +1,17 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 Manifest-Version: 1.0
 Built-By: parkp
 Build-Jdk: 11.0.18
 Created-By: Maven Integration for Eclipse
 
+=======
+Manifest-Version: 1.0
+Built-By: user
+Build-Jdk: 11.0.18
+Created-By: Maven Integration for Eclipse
+
+>>>>>>> parent of 345be4a (no message)
 =======
 Manifest-Version: 1.0
 Built-By: user
