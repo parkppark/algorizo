@@ -11,7 +11,7 @@ public class InspectionDAOImpl implements InspectionDAO{
 	private static final String namespace = "co.algorizo.erp.inspectionMapper";
 	@Autowired
 	private SqlSession sqlSession;
-//	검수 목록 조회
+//	검수 목록 조회 아아아아
 	@Override
 	public List<InspectionDTO> list() {
 		// TODO Auto-generated method stub
