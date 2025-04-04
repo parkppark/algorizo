@@ -89,6 +89,10 @@ config.properties
 *_LOCAL_*.txt
 *_REMOTE_*.txt
 
+*mapper 2.xml
+*mapper~.xml
+*~.xml
+
 ### Java ###
 # Compiled class file
 *.class
